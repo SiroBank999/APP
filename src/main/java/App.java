@@ -19,7 +19,10 @@ public class App {
      */
     public static void main(String[] args) {
         JFSignIn s = new JFSignIn();
+        
         s.setVisible(true);
+        
+        
     }
     
 }

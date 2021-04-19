@@ -6,6 +6,8 @@
 
 package UI;
 
+import Controller.SignInController;
+
 /**
  *
  * @author Admin
@@ -44,13 +46,15 @@ public class JFSignIn extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtUsername.setBackground(new java.awt.Color(51, 0, 102));
+        txtUsername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtUsername.setForeground(new java.awt.Color(255, 255, 255));
+        txtUsername.setText("admin");
         txtUsername.setBorder(null);
         jPanel2.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 200, 30));
 
         txtPassword.setBackground(new java.awt.Color(51, 0, 102));
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
-        txtPassword.setText("jPasswordField1");
+        txtPassword.setText("123456");
         txtPassword.setBorder(null);
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 200, 30));
 
@@ -85,8 +89,11 @@ public class JFSignIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      JFMain m = new JFMain();
-      m.setVisible(true);
+       String username = txtUsername.getText();
+       String password = String.valueOf(txtPassword.getPassword());
+       SignInController ct = new SignInController(this);
+        ct.checkAccount(username, password);
+     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
